@@ -1,0 +1,32 @@
+.sideBar {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 387px;
+  padding: 45px 60px;
+  background-color: #0F1014;
+  border-right: 1px solid #3A3A3A;
+}
+
+.sideBarItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  padding: 12px 16px;
+}
+
+.sideBarItem:hover {
+  background-color: #4D4D4D;
+  border-radius: 6px;
+}
+
+.AccountIcon {
+  width: 24px;
+  height: 24px;
+}
+
+.itemText {
+  color: #fff;
+  font-size: 16px;
+}

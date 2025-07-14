@@ -1,0 +1,33 @@
+.formGrid {
+  display: grid;
+  gap: 16px;
+  max-width: 875px;
+  margin-top: 28px;
+  padding: 20px 16px;
+}
+
+.twoColumns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.threeColumns {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+}
+
+.customThreeColumns {
+  display: grid;
+  grid-template-columns: 1fr .75fr 0.20fr; 
+  gap: 16px;
+  align-items: end; 
+}
+
+.actionContainer {
+  display: flex;
+  justify-content: flex-end;
+  gap:1rem;
+  align-items: center;
+}

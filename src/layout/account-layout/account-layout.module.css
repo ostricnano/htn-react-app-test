@@ -1,0 +1,6 @@
+.layoutContainer {
+  height: calc(100vh - 75px - 68px);
+  display: flex;
+  margin: 0;
+  padding: 0;
+}

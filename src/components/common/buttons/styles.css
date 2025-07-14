@@ -1,0 +1,19 @@
+.standard-button {
+  border-radius: 8px;
+  padding: 10px 20px;
+  color: #fff;
+  border:none;
+  cursor: pointer;
+}
+.primary {
+  background-color: #D81F27;
+}
+
+.secondary {
+  background-color: transparent;
+  border: 2px solid #fff;
+  border-radius: 8px;
+}
+.fill {
+  background-color: #B3B3B3;
+}

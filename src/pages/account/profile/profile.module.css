@@ -1,0 +1,6 @@
+.profileContainer {
+  width: calc(100% - 378px);
+  height: 100%;
+  background-color: #0F1014;
+  padding: 20px;
+}
