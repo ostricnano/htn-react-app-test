@@ -12,8 +12,8 @@
   border: none;
   color: #fff;
   padding-left: 4rem;
-
 }
+
 
 .search-input::placeholder {
   color: #fff;
@@ -34,3 +34,21 @@ input:active {
   width: 21px;
   height: 21px;
 }
+
+
+  @media (max-width: 768px) {
+    .search-input {
+      display: none;
+    }
+    .search-icon {
+      position: static;
+      left: auto;
+      top: auto;
+    }
+    .search-bar-container {
+      width: auto;
+      height: auto;
+    }
+  }
+
+

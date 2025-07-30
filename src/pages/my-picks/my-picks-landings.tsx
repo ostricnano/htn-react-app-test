@@ -19,7 +19,10 @@ const headerStyles = {
   display: "flex",
   justifyContent: "flex-end",
   alignItems: "center",
-  padding: "25px 35px"
+  padding: "25px 35px",
+  "@media (max-width: 768px)": {
+    display: "none",
+  },
 } as const;
 
 const renderProgramCard = (item: any) => (
@@ -102,48 +105,57 @@ const MyPicks: React.FC = () => {
         <TextInput />
         <DropdownInput />
       </Box>
-      
-      <RenderCardList
-        title="Continue Watching"
-        program={continueWatching}
-        renderItem={renderProgramCard}
-        getItemKey={getProgramKey}
-      />
-      
-      <RenderCardList
-        title="Saved games"
-        program={savedGames}
-        renderItem={renderProgramCard}
-        getItemKey={getProgramKey}
-      />
-      
-      <RenderCardList
-        title="Favorite leagues"
-        program={favoriteLeagues}
-        renderItem={renderEntityCard}
-        getItemKey={getLeagueKey}
-      />
-      
-      <RenderCardList
-        title="Favorite events"
-        program={favoriteEvents}
-        renderItem={renderEntityCard}
-        getItemKey={getEventKey}
-      />
-      
-      <RenderCardList
-        title="Favorite Venues"
-        program={favoriteVenues}
-        renderItem={renderEntityCard}
-        getItemKey={getVenueKey}
-      />
-      
-      <RenderCardList
-        title="Favorite Teams"
-        program={favoriteTeams}
-        renderItem={renderEntityCard}
-        getItemKey={getTeamKey}
-      />
+      <Box
+        sx={{
+          "@media (max-width: 768px)": {
+            paddingTop: "45px",
+          },
+        }}
+      >
+
+        <RenderCardList
+          title="Continue Watching"
+          program={continueWatching}
+          renderItem={renderProgramCard}
+          getItemKey={getProgramKey}
+        />
+
+        <RenderCardList
+          title="Saved games"
+          program={savedGames}
+          renderItem={renderProgramCard}
+          getItemKey={getProgramKey}
+        />
+
+        <RenderCardList
+          title="Favorite leagues"
+          program={favoriteLeagues}
+          renderItem={renderEntityCard}
+          getItemKey={getLeagueKey}
+        />
+
+        <RenderCardList
+          title="Favorite events"
+          program={favoriteEvents}
+          renderItem={renderEntityCard}
+          getItemKey={getEventKey}
+        />
+
+        <RenderCardList
+          title="Favorite Venues"
+          program={favoriteVenues}
+          renderItem={renderEntityCard}
+          getItemKey={getVenueKey}
+        />
+
+        <RenderCardList
+          title="Favorite Teams"
+          program={favoriteTeams}
+          renderItem={renderEntityCard}
+          getItemKey={getTeamKey}
+        />
+      </Box>
+
     </AppContentWrapper>
   );
 };

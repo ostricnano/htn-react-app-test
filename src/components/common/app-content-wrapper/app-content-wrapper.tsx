@@ -11,6 +11,8 @@ const AppContentWrapper: React.FC<AppContentWrapperProps> = ({ children }) => {
       sx={{
         backgroundColor: "primary.main",
         minHeight: 'calc(100vh - 68px)',
+        paddingLeft: '0px !important',
+        paddingRight: '0px !important',
         paddingBottom: '56px'
       }}
     >

@@ -3,10 +3,11 @@ import AccountLayout from "@layout/account-layout/account-layout";
 import Profile from "@pages/account/profile/profile";
 import MyPicks from "@pages/my-picks/my-picks-landings";
 import MainLayout from "@layout/main-layout/main-layout";
-import Leagues from "@pages/leagues/leagues-landing";
 import Events from "@pages/events/events-landing";
 import Venues from "@pages/venues/venues-landing";
-import LeagueDetails from "@pages/leagues/league-details";
+import { lazy, Suspense } from "react";
+
+const Leagues = lazy(() => import("@pages/leagues/leagues-landing"));
 
 const AppRouter = () => {
   return (
@@ -17,8 +18,16 @@ const AppRouter = () => {
         </Route>
         <Route path="/" element={<MainLayout />}>
           <Route path="/my-picks" element={<MyPicks />} />
-          <Route path="/leagues" element={<Leagues />} />
-          <Route path="leagues/:id" element={<LeagueDetails />} />
+
+          <Route 
+            path="/leagues" 
+            element={
+              <Suspense fallback={<div>Loading...</div>}>
+                <Leagues />
+              </Suspense>
+            } 
+          />
+          <Route path="leagues/:id" element={<Leagues />} />
           <Route path="/events" element={<Events />} />
           <Route path="/venues" element={<Venues />} />
         </Route>

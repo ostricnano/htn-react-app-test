@@ -9,34 +9,60 @@ interface ListProps<T> {
 }
 
 const containerStyles = {
+  width: "100%",
   display: "flex",
   flexDirection: "column",
   alignItems: "flex-start",
   gap: "15px",
   alignSelf: "stretch",
-  padding: "0 0 50px 0",
+  padding: "0 60px 50px 60px",
+  "@media (max-width: 730px)": {
+    padding: "0 20px 50px 20px",
+    gap: "15px",
+  },
 } as const;
 
 const listStyles = {
   display: "flex",
   alignItems: "flex-start",
+  flexWrap: "wrap",
   gap: "15px",
+  width: "100%",
+  "@media (max-width: 730px)": {
+    flexWrap: "nowrap",
+    overflowX: "auto",
+    overflowY: "hidden",
+    scrollBehavior: "smooth",
+    WebkitOverflowScrolling: "touch", // Smooth scrolling on iOS
+    "&::-webkit-scrollbar": {
+      display: "none", // Hide scrollbar for webkit browsers
+    },
+    msOverflowStyle: "none", // Hide scrollbar for IE and Edge
+    scrollbarWidth: "none", // Hide scrollbar for Firefox
+  },
 } as const;
 
-const RenderCardList = <T,>({ 
-  title, 
-  program, 
-  renderItem, 
-  getItemKey = (_, index) => index 
+const itemWrapperStyles = {
+  "@media (max-width: 730px)": {
+    flexShrink: 0, // Prevent items from shrinking
+    minWidth: 'auto', // Minimum width for cards on mobile
+  },
+} as const;
+
+const RenderCardList = <T,>({
+  title,
+  program,
+  renderItem,
+  getItemKey = (_, index) => index
 }: ListProps<T>) => {
   return (
     <Box sx={containerStyles}>
       <Typography variant="h3">{title}</Typography>
       <Box sx={listStyles}>
         {program.map((item, index) => (
-          <React.Fragment key={getItemKey(item, index)}>
+          <Box key={getItemKey(item, index)} sx={itemWrapperStyles}>
             {renderItem(item, index)}
-          </React.Fragment>
+          </Box>
         ))}
       </Box>
     </Box>

@@ -1,0 +1,107 @@
+.carouselContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  --gradient-color: 255, 255, 255; /* RGB values for white background */
+}
+
+.carouselContainer.showRightGradient::after {
+  content: '';
+  position: absolute;
+  right: 0; /* Adjust based on your button size */
+  top: 0;
+  bottom: 0;
+  width: 150px; /* Width of gradient */
+  background: linear-gradient(90deg, rgba(15, 16, 20, 0.00) 0%, rgba(15, 16, 20, 0.80) 50%, var(--Gray-gray-900, #0F1014) 100%);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.carouselContainer.showLeftGradient::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 150px; /* Width of gradient */
+  background: linear-gradient(270deg, rgba(15, 16, 20, 0.00) 0%, rgba(15, 16, 20, 0.80) 50%, var(--Gray-gray-900, #0F1014) 100%);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.leftButton {
+  left: 15px;
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.rightButton {
+  right: 15px;
+}
+
+.carousel {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  anchor-name: --carousel;
+  scroll-behavior: smooth;
+  flex: 1;
+  user-select: none;
+  
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  
+}
+
+.carousel__slide {
+  flex: 0 0 auto;
+  width: 300px; /* Adjust this width as needed */
+  scroll-snap-align: center;
+  user-select: none;
+  pointer-events: auto;
+}
+
+@media (max-width: 768px) {
+  .carousel__slide {
+    width: calc(100vw - 120px); /* Show most of current slide + part of next */
+    max-width: 280px; /* Prevent slides from being too large */
+    min-width: 250px; /* Ensure minimum readable size */
+  }
+  .rightButton, .leftButton {
+    display: none;
+  }
+  .showRightGradient::after, .showLeftGradient::before {
+    display: none;
+  }
+  .carousel {
+    gap: 1rem;
+  }
+}

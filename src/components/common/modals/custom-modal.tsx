@@ -15,7 +15,11 @@ const style = {
   alignItems: "center",
   gap: "30px",
   backgroundColor: "#E6E6E6",
-  borderRadius: "16px"
+  borderRadius: "16px",
+  "@media (max-width: 730px)": {
+    width: "327px",
+    padding: "24px",
+  },
 };
 
 interface BaseModalProps {
@@ -52,7 +56,7 @@ const CustomModal: React.FC<BaseModalProps> = ({
             },
           }}
         >
-          <CloseIcon />
+          <CloseIcon stroke="black" />
         </IconButton>
         {children}
       </Box>

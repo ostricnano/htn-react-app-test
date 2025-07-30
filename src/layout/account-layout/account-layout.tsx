@@ -1,8 +1,8 @@
 import { Outlet } from "react-router-dom";
-import Footer from "@layout/footer/footer";
-import TopNavBar from "@layout/top-nav/top-nav";
 import AccountSidebar from "@layout/account-sidebar/account-sidebar";
 import styles from './account-layout.module.css'
+import Footer from "@/components/common/footer/footer";
+import TopNavBar from "@/components/common/top-nav-bar/top-nav-bar";
 
 const AccountLayout = () => {
   return (
@@ -10,7 +10,7 @@ const AccountLayout = () => {
       <TopNavBar />
       <div className={styles.layoutContainer}>
         <AccountSidebar />
-          <Outlet />
+        <Outlet />
       </div>
       <Footer />
     </>

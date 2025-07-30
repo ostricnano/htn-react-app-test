@@ -13,14 +13,14 @@ export const CloseIcon = (props: SVGProps<SVGSVGElement>) => {
       <g clipPath="url(#clip0_20535_67590)">
         <path
           d="M11 1L1 11"
-          stroke="#0F1014"
+          stroke={props.stroke}
           strokeWidth="1.5"
           strokeLinecap="round"
           strokeLinejoin="round"
         />
         <path
           d="M1 1L11 11"
-          stroke="#0F1014"
+          stroke={props.stroke}
           strokeWidth="1.5"
           strokeLinecap="round"
           strokeLinejoin="round"

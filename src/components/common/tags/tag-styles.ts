@@ -12,5 +12,6 @@ export const tagStyles = {
     fontSize: "12px",
     fontWeight: "400",
     lineHeight: "100%",
+    color: "#fff",
   },
 };
