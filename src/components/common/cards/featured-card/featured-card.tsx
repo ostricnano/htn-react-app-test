@@ -9,7 +9,7 @@ const FeaturedCard = ({ image, id }: { image: string, id: number }) => {
         height: 456,
       }}
     >
-      <img src= {image}  alt="" />
+      {image && <img src= {image}  alt="" />}
     </Box>
   )
 }

@@ -75,7 +75,6 @@ const SignUpBanner = () => {
             position: 'static',
             width: '100%',
             marginTop: '-4rem',
-
           }
         }}
       >

@@ -10,7 +10,7 @@ const AppContentWrapper: React.FC<AppContentWrapperProps> = ({ children }) => {
       maxWidth={false}
       sx={{
         backgroundColor: "primary.main",
-        minHeight: 'calc(100vh - 68px)',
+        minHeight: 'calc(100vh - 4.6875rem)',
         paddingLeft: '0px !important',
         paddingRight: '0px !important',
         paddingBottom: '56px'
